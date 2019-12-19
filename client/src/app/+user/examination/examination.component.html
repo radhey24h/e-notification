@@ -1,0 +1,42 @@
+<!-- services -->
+<div class="services">
+  <div *ngIf="isExamSelected; else notShow">
+    <h3 class="heading-agileinfo">Examination<span>The purpose of information and a variety of new ones </span></h3>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6">
+          <h4 class="heading-agile">Entrance Exams</h4>
+          <a *ngFor="let data of examination" (click)="showExaminationDetails(data.title)">
+            <div *ngIf="data.examiniationType =='entrance'" class="strip">
+              <h5>{{data.title}}</h5>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6">
+          <h4 class="heading-agile">Latest jobs</h4>
+          <a *ngFor="let data of examination" (click)="showExaminationDetails(data.title)">
+            <div *ngIf="data.examiniationType =='job'" class="strip">
+              <h5>{{data.title}}</h5>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #notShow>
+    <h3 class="heading-agileinfo">{{exam.title}}</h3>
+    <div class="container">
+      <div class="row">
+        <a class="col-md-12" (click)="onNavigate(exam.url)">
+          <div class="strip">
+            <h5>{{exam.description}}</h5>
+          </div>
+        </a>
+      </div>
+    </div>
+  </ng-template>
+</div>
+<!-- //services -->

@@ -1,0 +1,51 @@
+<div class="noticeboard">
+    <div class="text-center">
+        <h5>Examination</h5>
+    </div>
+    <div class="container">
+        <button mat-button (click)="openDialog('Add', {})" mat-flat-button class="btn-primary btn">Add Row</button>
+        <table mat-table [dataSource]="dataSource" matSort>
+            <!-- examinationType Column -->
+            <ng-container matColumnDef="examinationType">
+                <th mat-header-cell *matHeaderCellDef> Examination Type </th>
+                <td mat-cell *matCellDef="let row"> {{row.examinationType}} </td>
+            </ng-container>
+
+            <!-- title Column -->
+            <ng-container matColumnDef="title">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
+                <td mat-cell *matCellDef="let row"> {{row.title}} </td>
+            </ng-container>
+
+            <!-- title Column -->
+            <ng-container matColumnDef="description">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
+                <td mat-cell *matCellDef="let row"> {{row.description}} </td>
+            </ng-container>
+
+            <!-- url Time Column -->
+            <ng-container matColumnDef="url">
+                <th mat-header-cell *matHeaderCellDef> URL </th>
+                <td mat-cell *matCellDef="let row"> {{row.url}} </td>
+            </ng-container>
+
+            <!-- attachment Time Column -->
+            <ng-container matColumnDef="attachment">
+                <th mat-header-cell *matHeaderCellDef> URL </th>
+                <td mat-cell *matCellDef="let row"> {{row.attachment}} </td>
+            </ng-container>
+
+            <!-- Action Column -->
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef> Action </th>
+                <td mat-cell *matCellDef="let row">
+                    <a (click)="openDialog('Update', row)">Edit</a> | <a (click)="openDialog('Delete', row)">Delete</a>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 50, 100]"></mat-paginator>
+    </div>
+</div>

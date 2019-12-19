@@ -1,0 +1,27 @@
+<!-- services -->
+<div class="services">
+    <h3 class="heading-agileinfo">Select a state<span>The purpose of information and a variety of new ones </span></h3>
+    <div class="container">
+
+        <div class="row" *ngIf="isStateSelected; else notShow">
+            <div class="col-md-3" *ngFor="let data of state">
+                <a (click)="showUniversity(data.stateName)">
+                    <div class="strip">
+                        <h4>{{data.stateName}}</h4>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <ng-template #notShow>
+            <div class="col-md-3" *ngFor="let data of university">
+                <a (click)="onNavigate(data.url)">
+                    <div class="strip">
+                        <h4>{{data.universityName}}</h4>
+                    </div>
+                </a>
+            </div>
+        </ng-template>
+    </div>
+</div>
+<!-- //services -->

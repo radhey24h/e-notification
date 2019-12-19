@@ -1,0 +1,38 @@
+<mat-card class="form-card">
+    <mat-card-content>
+        <h4 *ngIf="action != 'Delete'" mat-dialog-title>Please <strong>{{action}}</strong> the row.</h4>
+        <form class="example-container" #targetForm="ngForm">
+            <div mat-dialog-content *ngIf="action != 'Delete'; else elseTemplate">
+                <mat-form-field>
+                    <mat-select [(ngModel)]="examination.examinationType" name="examinationType"
+                        placeholder="Examination Type">
+                        <mat-option *ngFor="let examType of examinationTypes" [value]="examType.value">
+                            {{examType.text}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput [(ngModel)]="examination.title" name="title" placeholder="title">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput [(ngModel)]="examination.description" name="description" placeholder="description">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput [(ngModel)]="examination.url" name="url" placeholder="url">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput [(ngModel)]="examination.attachment" name="url" placeholder="attachment">
+                </mat-form-field>
+            </div>
+            <div>
+                <ng-template #elseTemplate>
+                    Are you sure to delete <b>{{examination.title}}</b>?
+                </ng-template>
+            </div>
+            <div mat-dialog-actions>
+                &nbsp; <button mat-button (click)="doAction()" class="btn-primary btn">{{action}}</button> &nbsp;
+                <button mat-button (click)="closeDialog()" mat-flat-button class="btn-primary btn">Cancel</button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

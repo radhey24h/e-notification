@@ -1,0 +1,89 @@
+<div class="noticeboards section-w3ls about-w3ls" id="noticeboards">
+  <div class="noticeboard-agileinfo">
+    <div class="container">
+      <div class="agileits-noticeboard-grids">
+        <div class="row owl-carousel owl-theme">
+          <div class="col-md-6 item">
+            <h4 class="heading-noticeboard">Updates</h4>
+
+            <div *ngFor="let data of updates">
+              <div class="noticeboard-info">
+                <div class="noticeboard-top">
+                  <p> {{data.description}} </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6 item">
+            <h4 class="heading-noticeboard">Notice</h4>
+            <div *ngFor="let data of notice">
+              <div class="noticeboard-info">
+                <div class="noticeboard-top">
+                  <p> {{data.description}} </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="feedback section-w3ls about-w3ls" id="testimonials">
+  <div class="feedback-agileinfo">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 item">
+          <div class="agileits-feedback-grids">
+            <div class="row owl-carousel owl-theme">
+              <h3 class="heading-agileinfo">Notification<span class="ttt">The action of notifying someone or something.
+                  The main purpose of the notification is to announce the education of the new updates. </span>
+              </h3>
+              <!-- <div class="feedback-info">
+                <div class="feedback-top">
+                  <p> Sed semper leo metus, a lacinia eros semper at. Etiam sodales orci sit amet vehicula pellentesque.
+                  </p>
+                </div>
+              </div>
+              <div class="feedback-info">
+                <div class="feedback-top">
+                  <p> Sed semper leo metus, a lacinia eros semper at. Etiam sodales orci sit amet vehicula pellentesque.
+                  </p>
+                </div>
+              </div>
+              <div class="feedback-info">
+                <div class="feedback-top">
+                  <p> Sed semper leo metus, a lacinia eros semper at. Etiam sodales orci sit amet vehicula pellentesque.
+                  </p>
+                </div>
+              </div>-->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 item">
+          <div class="agileits-feedback-grids">
+            <div class="row owl-carousel owl-theme">
+              <h3 class="heading-agileinfo">Announcement<span class="ttt">That performs education work using </span>
+              </h3>
+              <!-- <div class="feedback-info">
+                  <div class="feedback-top">
+                    <p> Sed semper leo metus, a lacinia eros semper at. Etiam sodales orci sit amet vehicula pellentesque.
+                    </p>
+                  </div>
+                </div> -->
+              <div class="col-md-12" *ngFor="let data of announcement">
+                <div class="feedback-info">
+                  <div class="feedback-top">
+                    <p> {{data.description}} </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

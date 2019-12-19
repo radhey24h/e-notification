@@ -1,0 +1,21 @@
+table {
+  width: 100%;
+}
+.mat-header-row th {
+  font-size: medium;
+  font-weight: bold;
+}
+.mat-column-action {
+  text-align: center;
+}
+.mat-dialog-container {
+  height: 400px;
+  width: 450px;
+}
+.mat-form-field {
+  font-size: inherit;
+  font-weight: 400;
+  line-height: 1.125;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  width: 100%;
+}
